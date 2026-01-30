@@ -1,0 +1,157 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="Bootstrap 5, Factory, Industrial, building, business, chemicals, multipurpose, RTL" />
+    <meta name="description" content="Bootstrap 5 HTML5 Template" />
+    <meta name="author" content="www.themeht.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>{{ site_settings.site_name }}</title>
+
+
+  {% block css %}
+     <!-- favicon icon -->
+
+
+
+
+    <!-- inject css start -->
+
+    <!--== bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== animate -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== fontawesome -->
+    <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== themify-icons -->
+    <link href="{% static 'css/themify-icons.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== magnific-popup -->
+    <link href="{% static 'css/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== owl-carousel -->
+    <link href="{% static 'css/owl-carousel/owl.carousel.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== spacing -->
+    <link href="{% static 'css/spacing.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== base -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== shortcodes -->
+    <link href="{% static 'css/shortcodes.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== default-theme -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--== responsive -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- inject css end -->
+
+    <style>
+      :root {
+          --primary-color: {{ site_settings.primary_color }};
+          --secondary-color: {{ site_settings.secondary_color }};
+      }
+    </style>
+  {% endblock css %}
+
+  </head>
+  <body>
+
+  <!-- page wrapper start -->
+
+    <div class="page-wrapper">
+
+    <!-- preloader start -->
+
+<!--        <form action="{% url 'set_language' %}" method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <input type="hidden" name="next" value="{{ request.path }}">-->
+<!--            <select name="language" onchange="this.form.submit()">-->
+<!--                <option value="en">English</option>-->
+<!--                <option value="ar">العربية</option>-->
+<!--            </select>-->
+<!--        </form>-->
+
+        {% include 'layout/loader.html' %}
+
+    <!-- preloader end -->
+
+
+    <!--header start-->
+        {% include 'layout/navbar.html' %}
+
+    <!--header end-->
+
+        {% block content %}
+    <!-- page content here -->
+        {% endblock content %}
+
+    <!--footer start-->
+        {% include 'layout/footer.html' %}
+    <!--footer end-->
+
+    </div>
+
+
+    <!--back-to-top start-->
+
+    <div class="scroll-top"><a class="smoothscroll" href="#top"><i class="fas fa-chevron-up"></i></a></div>
+
+    <!--back-to-top end-->
+
+
+    <!-- inject js start -->
+    {% block scriptcontent %}
+    <!--== theme -->
+    <script src="{% static 'js/theme.js' %}"></script>
+
+    <!--== magnific-popup -->
+    <script src="{% static 'js/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!--== owl-carousel -->
+    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+
+    <!--== parallax -->
+    <script src="{% static 'js/parallax/parallaxie.min.js' %}"></script>
+
+    <!--== counter -->
+    <script src="{% static 'js/counter/counter.js' %}"></script>
+
+    <!--== particle -->
+    <script src="{% static 'js/particle/jquery.particleground.min.js' %}"></script>
+
+    <!--== countdown -->
+    <script src="{% static 'js/countdown/jquery.countdown.min.js' %}"></script>
+
+    <!--== isotope -->
+    <script src="{% static 'js/isotope/isotope.pkgd.min.js' %}"></script>
+
+    <!--== contact-form -->
+    <script src="{% static 'js/contact-form/contact-form.js' %}"></script>
+
+    <!--== theme-script -->
+    <script src="{% static 'js/theme-script.js' %}"></script>
+
+    <!-- inject js end -->
+
+
+
+
+
+<!-- inject js end -->
+
+    {% endblock %}
+
+  </body>
+</html>

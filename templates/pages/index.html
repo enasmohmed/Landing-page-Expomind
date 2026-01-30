@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+
+{% block content %}
+
+
+
+<!--body content start-->
+
+<div class="page-content">
+
+<!--contact start-->
+  {% include 'sections/hero.html' %}
+  {% include 'sections/contact-under-hero.html' %}
+  {% include 'sections/services.html' %}
+  {% include 'sections/about.html' %}
+  {% include 'pages/contact.html' %}
+
+<!--contact end-->
+
+</div>
+
+<!--body content end-->
+
+
+
+
+{% endblock %}

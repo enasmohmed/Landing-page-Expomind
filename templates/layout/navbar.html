@@ -1,0 +1,69 @@
+{% load static %}
+{% load i18n %}
+
+
+<!--header start-->
+
+<header id="site-header" class="header">
+  <div id="header-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand logo d-flex align-items-center" href="/">
+                  <img id="logo-img" src="{{ site_settings.logo_url }}" alt="Logo">
+                  <span class="site-name">{{ site_settings.site_name }}</span>
+              </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <!-- Left nav -->
+              <ul class="nav navbar-nav ms-auto">
+                <li class="nav-item"> <a class="nav-link active " href="#">Home</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Solutions</a></li>
+
+                <li class="nav-item"> <a class="nav-link" href="#">Project</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Contact</a></li>
+
+                 <!-- 🌍 Language Switcher -->
+                <li class="nav-item">
+                  <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.path }}">
+
+                    {% get_current_language as LANGUAGE_CODE %}
+
+                    {% if LANGUAGE_CODE == 'ar' %}
+                      <button type="submit" name="language" value="en"
+                              class="lang-btn">
+                        EN
+                      </button>
+                    {% else %}
+                      <button type="submit" name="language" value="ar"
+                              class="lang-btn">
+                        AR
+                      </button>
+                    {% endif %}
+                  </form>
+                </li>
+
+
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--header end-->
+<!-- <header>-->
+<!--      <nav>-->
+<!--        <a href="/">{{ site.site_name }}</a>-->
+<!--        &lt;!&ndash; navbar links &ndash;&gt;-->
+<!--      </nav>-->
+<!--</header>-->
