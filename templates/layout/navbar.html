@@ -2,6 +2,9 @@
 {% load i18n %}
 
 
+
+
+
 <!--header start-->
 
 <header id="site-header" class="header">
@@ -21,12 +24,9 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <!-- Left nav -->
               <ul class="nav navbar-nav ms-auto">
-                <li class="nav-item"> <a class="nav-link active " href="#">Home</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Pages</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Solutions</a></li>
-
-                <li class="nav-item"> <a class="nav-link" href="#">Project</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Contact</a></li>
+                {% for section in sections %}
+                <li class="nav-item"> <a class="nav-link" data-section="{{ section.slug }}" href="#{{ section.slug }}">{{ section.title}}</a></li>
+                {% endfor %}
 
                  <!-- 🌍 Language Switcher -->
                 <li class="nav-item">
@@ -61,9 +61,3 @@
 </header>
 
 <!--header end-->
-<!-- <header>-->
-<!--      <nav>-->
-<!--        <a href="/">{{ site.site_name }}</a>-->
-<!--        &lt;!&ndash; navbar links &ndash;&gt;-->
-<!--      </nav>-->
-<!--</header>-->

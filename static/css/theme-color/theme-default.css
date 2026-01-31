@@ -8,9 +8,9 @@
 /* ------------------------
     General
 ------------------------*/
-::-moz-selection { background: #f9a305; color: #fff; text-shadow: none; }
-::-moz-selection { background: #f9a305; color: #fff; text-shadow: none; }
-::selection { background: #f9a305; color: #fff; text-shadow: none; }
+::-moz-selection { background: var(--primary-color); color: #fff; text-shadow: none; }
+::-moz-selection { background: var(--primary-color); color: #fff; text-shadow: none; }
+::selection { background: var(--primary-color); color: #fff; text-shadow: none; }
 
  
 /* ------------------------
@@ -63,7 +63,7 @@ a.popup,
 .nav-arrows span i,
 .header-4 .top-bar,
 .service-item:hover .service-description
-{ background-color: #f9a305;}
+{ background-color: var(--primary-color);}
 
 
 /* ------------------------
@@ -145,7 +145,7 @@ footer .widget .recent-post-desc span,
 .dark-bg .service-description h4,
 .dark-bg .service-item:hover .service-description h4,
 .section-title h6
-{color: #f9a305;}
+{color: var(--primary-color);}
 
 
 /* ------------------------
@@ -161,20 +161,20 @@ footer .widget .recent-post-desc span,
 .form-control:focus,
 .reply a:hover,
 .nav-dots span::before
-{border-color: #f9a305;}
+{border-color: var(--primary-color);}
 
 .contact-main
-{border-bottom-color: #f9a305}
+{border-bottom-color: var(--primary-color)}
 
 
 /* ------------------------
     Gradient Background
 ------------------------*/
-.ht-progress-bar.style-2 .progress .progress-bar{background: #f9a305; /* Old browsers */
-background: -moz-linear-gradient(left, #f9a305 0%, #2989d8 50%, #207cca 50%, #7db9e8 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, #f9a305 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, #f9a305 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9a305', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */}
+.ht-progress-bar.style-2 .progress .progress-bar{background: var(--primary-color); /* Old browsers */
+background: -moz-linear-gradient(left, var(--primary-color) 0%, #2989d8 50%, #207cca 50%, #7db9e8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, var(--primary-color) 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, var(--primary-color) 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--primary-color)', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */}
 
 
 @media (max-width: 992px){
@@ -183,13 +183,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9a305', end
 .navbar-nav .nav-link.active,
 #header-wrap.fixed-header .navbar-nav .nav-link:hover,
 #header-wrap.fixed-header .navbar-nav .nav-link.active{
-  background: #f9a305;
+  background: var(--primary-color);
 }
 
 /* ------------------------
     Color
 ------------------------*/
 .navbar-toggler-icon::before
-{color: #f9a305 !important;}
+{color: var(--primary-color) !important;}
 
 }

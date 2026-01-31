@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SiteSettings, VisionSection, CoreValue, CTASection, FooterSection
+from .models import SiteSettings, VisionSection, CoreValue, CTASection, FooterSection, Sections
 
 
 # Register your models here.
@@ -30,3 +30,9 @@ class CoreValueAdmin(admin.ModelAdmin):
 @admin.register(CTASection)
 class CTASectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'button_text', 'is_active')
+
+
+
+@admin.register(Sections)
+class SectionsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'is_visible')

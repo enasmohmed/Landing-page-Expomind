@@ -1,6 +1,7 @@
+
 from django.views.generic import TemplateView
 from pages.models import HeroSection, AboutSection, WhoWeAreSection
-from core.models import VisionSection, CoreValue, SiteSettings, CTASection
+from core.models import VisionSection, CoreValue, SiteSettings, CTASection, Sections
 from services.models import Service
 from contact.models import ContactMessage
 
@@ -14,6 +15,7 @@ class HomeView(TemplateView):
         context['hero'] = HeroSection.objects.filter(is_active=True).first()
         context['about'] = AboutSection.objects.filter(is_active=True).first()
         context['who_we_are'] = WhoWeAreSection.objects.filter(is_active=True).first()
+        context['sections'] = Sections.objects.filter(show_in_nav=True).order_by('order')
 
         context['mission'] = VisionSection.objects.filter(
             is_active=True,

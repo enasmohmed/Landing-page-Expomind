@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 class SiteSettings(models.Model):
@@ -19,7 +20,6 @@ class SiteSettings(models.Model):
     class Meta:
         verbose_name = _("Site Setting")
         verbose_name_plural = _("Site Settings")
-
 
     def __str__(self):
         return self.site_name or "Site Settings"
@@ -117,6 +117,24 @@ class CTASection(models.Model):
     )
 
     is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+
+
+class Sections(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, blank=True)
+    is_visible = models.BooleanField(default=True)
+    order = models.PositiveIntegerField(default=0)
+    show_in_nav = models.BooleanField(default=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            # نعتمد على العنوان الإنجليزي في الـ slug (أفضل تقنيًا)
+            self.slug = slugify(self.title_en)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
