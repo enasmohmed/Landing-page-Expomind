@@ -7,7 +7,7 @@ from ckeditor.fields import RichTextField
 
 class Service(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True, null=True)
     short_description = models.CharField(max_length=255, blank=True, null=True)
     description = RichTextField(blank=True, null=True)
     image = models.ImageField(upload_to='services/', blank=True, null=True)

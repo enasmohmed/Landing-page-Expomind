@@ -200,14 +200,6 @@ JAZZMIN_SETTINGS = {
 }
 
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Basic',
-        'removePlugins': 'elementspath',
-        'allowedContent': True,
-        'disallowedContent': 'span; *[style]',
-    }
-}
 
 
 CKEDITOR_UPLOAD_PATH = "uploads/"

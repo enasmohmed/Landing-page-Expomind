@@ -1,175 +1,154 @@
-# Core CMS – Django Dynamic Company Website
+# 🧩 Django CMS + Landing Page
 
-Core CMS هو مشروع Django معمول كـ **مكتبة / Base CMS**
-تقدري تستخدميه في أي مشروع موقع شركة (Corporate Website)
-وكل حاجة فيه **Dynamic من الأدمن** (Pages – Services – Projects – Blog – Contact – Settings).
+A dynamic **Content Management System (CMS)** built with **Django**, designed to manage a full website and landing pages from the admin panel without touching the code.
+
+The project allows admins to control:
+- Website content
+- Landing pages
+- Sections
+- Texts & images
+- SEO settings
+- Multi-language support
 
 ---
 
 ## 🚀 Features
 
-- Dynamic Pages (Home, About, etc.)
-- Services Module
-- Projects Module
-- Blog Module
-- Contact Form (Messages stored in Admin)
-- Global Site Settings (Logo, Colors, Social Links, Language)
-- Multi-language support (Arabic / English)
-- Rich Text Editor (CKEditor)
-- Clean Admin UI (Jazzmin – Optional)
-- Ready to plug with any HTML Template
+- 🧠 **Dynamic CMS**
+  - Manage pages, sections, and content from Django Admin
+  - No hardcoded content in templates
+
+- 🎯 **Landing Page Builder**
+  - Create and edit landing pages dynamically
+  - Control sections order and visibility
+
+- 🌍 **Multi-language Support**
+  - Arabic / English
+  - Django i18n ready
+
+- 🖼️ **Media Management**
+  - Upload images, logos, and assets from admin
+
+- 🔐 **Admin Dashboard**
+  - Secure Django admin panel
+  - Easy content editing
+
+- 📱 **Responsive Design**
+  - Bootstrap-based responsive templates
+
+- ⚙️ **SEO Ready**
+  - Meta titles & descriptions
+  - Clean URLs
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Tech Stack
 
-core_cms/
+- **Backend:** Django
+- **Frontend:** HTML, CSS, Bootstrap
+- **Database:** SQLite (can be replaced with PostgreSQL / MySQL)
+- **Languages:** Python, HTML, CSS
+- **CMS:** Django Admin
+- **Internationalization:** Django i18n
+
+---
+
+## 📂 Project Structure
+
+```text
+project_root/
 │
-├── core_cms/ # Main project settings
-│
-├── core/ # Site settings (SiteSettings model)
-│
-├── pages/ # Pages app (Home, About, etc.)
-├── services/ # Services app
-├── projects/ # Projects app
-├── blog/ # Blog / Posts app
-├── contact/ # Contact messages app
-│
-├── templates/ # Global templates
-├── static/ # Static files (CSS, JS, Images)
-├── staticfiles/ # Collected static files
-│
-├── env/ # Virtual environment
+├── core/                # Main CMS logic
+├── pages/               # Dynamic pages & landing pages
+├── templates/           # HTML templates
+├── static/              # CSS, JS, Images
+├── media/               # Uploaded files
+├── locale/              # Translation files
 ├── manage.py
-└── README.md
+└── requirements.txt
 
 
 
----
+⚙️ Installation & Setup
+1️⃣   Clone the repository
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
 
-## 🧰 Used Technologies & Libraries
-
-- Python 3.12+
-- Django 6.0.1
-- django-ckeditor
-- django-modeltranslation
-- django-jazzmin
-- Pillow
-
----
-
-## 📦 Requirements
-
-```txt
-Django==6.0.1
-django-ckeditor==6.7.3
-django-modeltranslation==0.19.19
-django-jazzmin==3.0.1
-Pillow
-
-
-
-⚙️ Installation Steps
-1️⃣   Clone the project
-
-    - git clone https://github.com/your-username/core-cms.git
-    - cd core-cms
-
-2️⃣   Create & activate virtual environment
-    - python -m venv env
-    - source env/bin/activate  # Linux / Mac
-    - env\Scripts\activate     # Windows
+2️⃣   Create virtual environment
+    python -m venv venv
+    source venv/bin/activate  # Linux / Mac
+    venv\Scripts\activate     # Windows
 
 3️⃣   Install dependencies
-    - pip install -r requirements.txt
+    pip install -r requirements.txt
+
+4️⃣   Apply migrations
+    python manage.py migrate
+
+5️⃣   Create superuser
+    python manage.py createsuperuser
+
+6️⃣   Run the project
+    python manage.py runserver
+
+
+Now open:
+
+    http://127.0.0.1:8000/
+    http://127.0.0.1:8000/admin/
+
+🌍 Multi-language Setup
+
+To compile translations:
+
+    django-admin compilemessages
     
-OR manually:
-
-    - pip install django django-ckeditor django-modeltranslation django-jazzmin pillow
-
-4️⃣   Update settings.py
-   -  INSTALLED_APPS = [
-            ...
-            'jazzmin',
-            'ckeditor',
-            'ckeditor_uploader',
-            'modeltranslation',
-        
-            'core',
-            'pages',
-            'services',
-            'projects',
-            'blog',
-            'contact',
-        ]
-   - CKEDITOR_UPLOAD_PATH = "uploads/"
-   - LANGUAGES = (
-        ('en', 'English'),
-        ('ar', 'Arabic'),
-    )
+    To add a new language:
     
-    MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
-    MODELTRANSLATION_LANGUAGES = ('en', 'ar')
-     
-
-5️⃣   Run migrations
-    - python manage.py makemigrations
-    - python manage.py migrate
-
-6️⃣   Create superuser
-    - python manage.py createsuperuser
-
-7️⃣   Run server
-    - python manage.py runserver
-
-Admin panel:
-    - http://127.0.0.1:8000/admin/
-
-
-
-🎨 Site Settings
-From Admin → Site Settings you can control:
-
-    * Site name
+    Update settings.py
     
-    * Logo & favicon
+    Add translation files in /locale
     
-    * Primary & Secondary colors
-    
-    * Contact info
-    
-    * Social media links
-    
-    * Default language
-    
-    * All available globally in templates via context processor.
+    Restart the server
 
-🌍 Multi-Language Support
+🧪 Demo Content
 
-    * Uses django-modeltranslation
+    After login to admin panel:
     
-    * Each model supports Arabic & English
+    Add Pages
     
-    * Language switching supported via Django i18n
-
-
-📌 Notes
-
-    * This project is designed as a base CMS library
+    Add Sections
     
-    * You can reuse it with any frontend template
+    Control landing page content
     
-    * All content is editable from admin without code changes
+    Upload images & logos
 
+📌 Use Cases
+
+    Company website
+    
+    Business landing page
+    
+    Corporate CMS
+    
+    Factory / Industrial website
+    
+    Portfolio or service website
+
+🔮 Future Improvements
+
+    Page builder UI
+    
+    Role-based permissions
+    
+    REST API
+    
+    Headless CMS support
+    
+    Caching & performance optimization
 
 👩‍💻 Author
-    Built with ❤️ using Django
-    By: Enas Mohamed
 
-
-📄 License
-    Free to use for personal and commercial projects.
-
-
-
-
+    Enas Mohamed
+    Backend & Full-Stack Developer
+    Specialized in Django & Web Systems

@@ -1,7 +1,5 @@
 from django.core.cache import cache
-from .models import SiteSettings
-
-
+from .models import SiteSettings, FooterSection
 
 
 def site_settings_context(request):
@@ -9,6 +7,7 @@ def site_settings_context(request):
 
     if data is None:
         site = SiteSettings.objects.first()
+
 
         data = {
             'site_name': site.site_name if site else '',
@@ -30,8 +29,11 @@ def site_settings_context(request):
 
         cache.set('site_settings_data', data, 3600)
 
+    footer = FooterSection.objects.filter(is_active=True).first()
+
     return {
         'site_settings': data,
+        'footer': footer,
         'logo_url': data['logo_url'],
         'favicon_url': data['favicon_url'],
     }

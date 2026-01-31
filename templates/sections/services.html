@@ -5,83 +5,39 @@
 
 <!--feuture start-->
 
-<section class="feuture-main">
+<section class="dark-bg text-center">
   <div class="container">
-    <div class="row g-0">
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-item text-center">
-          <div class="featured-icon"> <i class="flaticon-industrial-robot"></i>
-          </div>
-          <div class="featured-title text-uppercase">
-            <h5>Chemical Research</h5>
-          </div>
-          <div class="featured-desc">
-            <p class="mb-3">Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p> <a href="chemical-research.html">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="section-title">
+          <h2 class="title">Our <span> Services</span></h2>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-item text-center">
-          <div class="featured-icon"> <i class="flaticon-maintenance"></i>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="owl-carousel" data-items="3" data-md-items="2" data-sm-items="1" data-xs-items="1" data-margin="30">
+          {% for service in services %}
+          <div class="item">
+            <div class="service-item">
+              <div class="service-images">
+                <img class="img-fluid" src="{{ service.icon_class }}" alt="">
+                <div class="service-icon"> <i class="flaticon-industrial-robot"></i>
+                </div>
+              </div>
+              <div class="service-description">
+                <h4>{{ service.title }}</h4>
+                <p>{{ service.description|safe }}</p>
+              </div>
+            </div>
           </div>
-          <div class="featured-title text-uppercase">
-            <h5>Energy & Power Engineering</h5>
-          </div>
-          <div class="featured-desc">
-            <p class="mb-3">Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p> <a href="energy-&-power-engineering.html">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-item text-center">
-          <div class="featured-icon"> <i class="flaticon-fuel-station"></i>
-          </div>
-          <div class="featured-title text-uppercase">
-            <h5>Petroleum and Gas</h5>
-          </div>
-          <div class="featured-desc">
-            <p class="mb-3">Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p> <a href="petroleum-and-gas.html">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-item text-center">
-          <div class="featured-icon"> <i class="flaticon-growth"></i>
-          </div>
-          <div class="featured-title text-uppercase">
-            <h5>Agriculture Engineering</h5>
-          </div>
-          <div class="featured-desc">
-            <p class="mb-3">Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p> <a href="agriculture-engineering.html">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-item text-center">
-          <div class="featured-icon"> <i class="flaticon-settings"></i>
-          </div>
-          <div class="featured-title text-uppercase">
-            <h5>Mechanical Engineering</h5>
-          </div>
-          <div class="featured-desc">
-            <p class="mb-3">Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p> <a href="mechanical-engineering.html">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-item text-center">
-          <div class="featured-icon"> <i class="flaticon-worker"></i>
-          </div>
-          <div class="featured-title text-uppercase">
-            <h5>Civil Engineering</h5>
-          </div>
-          <div class="featured-desc">
-            <p class="mb-3">Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p> <a href="civil-engineering.html">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
+         {% endfor %}
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!--feuture end-->

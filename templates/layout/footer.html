@@ -5,103 +5,91 @@
 
 
 
-<footer>
-    <p>{{ site.address }} | {{ site.phone }} | {{ site.email }}</p>
-</footer>
-<!--footer start-->
 
 
 <footer class="footer footer-2 pt-5 mt-0 dark-bg position-relative">
   <div class="primary-footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <h5>About <span class="text-theme"> Us</span></h5>
-          <p class="mb-0">Misto Industrial is fully responsible, Performance oriented theme. Build whatever you like with the Misto. Misto is the creative, modern and multipurpose HTML5 Template suitable for Your business, best Industrial Template For Your Company.</p>
+        <div class="col-lg-3 col-md-6" style="margin-top: -24px;">
+          <div class="footer-logo mb-3" style="margin-left: -30px;">
+            <a class="navbar-brand logo d-flex align-items-center" href="/">
+              {% if footer.logo %}
+              <img id="logo-img" class="img-fluid" src="{{ footer.logo.url }}" alt="Logo">
+              {% endif %}
+              <span class="site-name">{{ footer.site_name }}</span>
+            </a>
+          </div>
+          <p class="mb-3">{{ footer.description }}</p>
+<!--          <ul class="list-unstyled working-hours clearfix">-->
+<!--            <li><span>{{ footer.working_days }}</span> {{ footer.working_hours }}</li>-->
+<!--            <li><span>Sunday</span> {{ footer.sunday_hours }}</li>-->
+<!--          </ul>-->
         </div>
-        <div class="col-lg-3 col-md-6 mt-5 mt-md-0 footer-list">
-          <h5>Our <span class="text-theme"> Solutions</span></h5>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-md-0 footer-list ps-md-5">
+          <h5>Quick <span class="text-theme"> Link</span></h5>
           <ul class="list-unstyled">
-            <li><a href="chemical-research.html"><i class="fas fa-angle-right"></i> Chemical Research</a>
-            </li>
-            <li><a href="energy-&-power-engineering.html"><i class="fas fa-angle-right"></i> Energy & Power Enginerring</a>
-            </li>
-            <li><a href="petroleum-and-gas.html"><i class="fas fa-angle-right"></i> Petroleum and Gas</a>
-            </li>
-            <li><a href="agriculture-engineering.html"><i class="fas fa-angle-right"></i> Agriculture Engineering</a>
-            </li>
-            <li><a href="mechanical-engineering.html"><i class="fas fa-angle-right"></i> Mechanical Engineering</a>
-            </li>
-            <li><a href="civil-engineering.html"><i class="fas fa-angle-right"></i> Civil Engineering</a>
-            </li>
+            {% for link in footer.quick_links %}
+            <li><a href="{{ link.url }}"><i class="fas fa-angle-right"></i> {{ link.title }}</a></li>
+            {% endfor %}
           </ul>
         </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-list">
+          <h5>Our <span class="text-theme"> Solutions</span></h5>
+          <ul class="list-unstyled">
+            {% for sol in footer.solutions %}
+            <li><a href="{{ sol.url }}"><i class="fas fa-angle-right"></i> {{ sol.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 widget">
           <h5>Recent <span class="text-theme"> Post</span></h5>
           <div class="recent-post mb-0">
             <ul class="list-unstyled">
+              {% for post in footer.recent_posts %}
               <li class="mb-3">
                 <div class="recent-post-thumb">
-                  <img class="img-fluid" src="images/blog/blog-thumb/01.jpg" alt="">
+                  <img class="img-fluid" src="{{ post.image }}" alt="">
                 </div>
-                <div class="recent-post-desc"> <a href="#">Misto Industrial is fully responsible</a>
-                  <span>April 23, 2019</span>
-                </div>
-              </li>
-              <li>
-                <div class="recent-post-thumb">
-                  <img class="img-fluid" src="images/blog/blog-thumb/02.jpg" alt="">
-                </div>
-                <div class="recent-post-desc"> <a href="#">Whatever you like with the Misto</a>
-                  <span>April 23, 2019</span>
+                <div class="recent-post-desc"> <a href="{{ post.url }}">{{ post.title }}</a>
+                  <span>{{ post.date }}</span>
                 </div>
               </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 widget">
-          <h5>Get In <span class="text-theme"> Touch</span></h5>
-          <ul class="contact-info list-unstyled mt-4">
-        <li class="mb-4"><i class="flaticon-paper-plane"></i><span>Address:</span><p>423B, Road Wordwide Country, USA</p></li>
-        <li class="mb-4"><i class="flaticon-phone-call"></i><span>Phone:</span><a href="tel:+912345678900">+91-234-567-8900</a></li>
-        <li><i class="flaticon-message"></i><span>Email</span><a href="mailto:themeht23@gmail.com"> themeht23@gmail.com</a></li>
-      </ul>
-        </div>
       </div>
-      <div class="row mt-5 align-items-center">
+
+      <div class="row g-0 mt-5 box-shadow">
         <div class="col-md-4">
-          <div class="footer-logo">
-            <img id="footer-logo-img" class="img-fluid" src="images/logo-yellow.png" alt="">
+          <div class="p-5 text-center footer-media theme-bg border-0"> <span>Address:</span>
+            <p class="mb-0">{{ footer.address }}</p>
           </div>
         </div>
-        <div class="col-md-4 text-md-center mt-3 mt-md-0">
-          <ul class="list-unstyled working-hours clearfix">
-            <li><span>Monday - Friday</span> 10:00 to 6:00</li>
-            <li><span>Sunday</span> Closed</li>
-          </ul>
+        <div class="col-md-4">
+          <div class="p-5 text-center footer-media dark-bg border border-dark"> <span>Phone:</span>
+            <a href="tel:{{ footer.phone }}">{{ footer.phone }}</a>
+          </div>
         </div>
-        <div class="col-md-4 text-md-end mt-3 mt-md-0">
-          <div class="social-icons social-colored">
-              <ul class="list-inline mb-0">
-                <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                </li>
-                <li class="social-twitter"><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                </li>
-                <li class="social-gplus"><a href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a>
-                </li>
-                <li class="social-linkedin"><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                </li>
-              </ul>
-            </div>
+        <div class="col-md-4">
+          <div class="p-5 text-center footer-media theme-bg border-0"> <span>Email:</span>
+            <a href="mailto:{{ footer.email }}">{{ footer.email }}</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="secondary-footer">
     <div class="container">
       <div class="copyright">
         <div class="row text-center">
-          <div class="col-md-12"> <span>Copyright 2018 Misto Theme by <a target="_blank" href="www.themeht.com"> ThemeHt </a> | All Rights Reserved</span>
+          <div class="col-md-12">
+            <span>{{ footer.copyright_text }}</span>
           </div>
         </div>
       </div>

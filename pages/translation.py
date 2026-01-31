@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import Page, HeroSection, AboutSection
+from .models import Page, HeroSection, AboutSection, WhoWeAreSection, WhoWeAreFeature
 
 
 class PageTranslationOptions(TranslationOptions):
@@ -14,6 +14,17 @@ class HeroSectionTranslationOptions(TranslationOptions):
 class AboutSectionTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
 
+
+class WhoWeAreSectionTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+class WhoWeAreFeatureTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+
 translator.register(Page, PageTranslationOptions)
 translator.register(HeroSection, HeroSectionTranslationOptions)
 translator.register(AboutSection, AboutSectionTranslationOptions)
+translator.register(WhoWeAreSection, WhoWeAreSectionTranslationOptions)
+translator.register(WhoWeAreFeature, WhoWeAreFeatureTranslationOptions)

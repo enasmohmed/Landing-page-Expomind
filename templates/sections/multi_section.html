@@ -1,0 +1,105 @@
+{% load static %}
+{% load i18n %}
+
+
+
+<!--multi section start-->
+
+<section class="vision-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT : TABS -->
+      <div class="col-lg-6 col-md-12">
+
+        <ul class="nav nav-tabs mb-4" role="tablist">
+
+          {% if mission %}
+          <li class="nav-item">
+            <button class="nav-link active"
+                    data-bs-toggle="tab"
+                    data-bs-target="#mission"
+                    type="button">
+              {{ mission.title }}
+            </button>
+          </li>
+          {% endif %}
+
+          {% if vision %}
+          <li class="nav-item">
+            <button class="nav-link {% if not mission %}active{% endif %}"
+                    data-bs-toggle="tab"
+                    data-bs-target="#vision"
+                    type="button">
+              {{ vision.title }}
+            </button>
+          </li>
+          {% endif %}
+
+        </ul>
+
+        <div class="tab-content">
+
+          {% if mission %}
+          <div class="tab-pane fade show active" id="mission">
+            <p class="lead">{{ mission.description }}</p>
+          </div>
+          {% endif %}
+
+          {% if vision %}
+          <div class="tab-pane fade {% if not mission %}show active{% endif %}" id="vision">
+            <p class="lead">{{ vision.description }}</p>
+          </div>
+          {% endif %}
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT : ACCORDION (ثابت مؤقتًا) -->
+      <div class="col-lg-6 col-md-12 mt-5 mt-lg-0">
+
+       <div class="accordion mt-4" id="coreValuesAccordion">
+
+            {% for value in core_values %}
+            <div class="accordion-item">
+
+              <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse{{ forloop.counter }}"
+                        aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+
+                  {% if value.icon %}
+                    <img src="{{ value.icon.url }}" width="24" class="me-2">
+                  {% endif %}
+                  {{ value.title }}
+
+                </button>
+              </h2>
+
+              <div id="collapse{{ forloop.counter }}"
+                   class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                   data-bs-parent="#coreValuesAccordion">
+
+                <div class="accordion-body">
+                  {{ value.description }}
+                </div>
+
+              </div>
+
+            </div>
+            {% endfor %}
+
+          </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!--multi section end-->
