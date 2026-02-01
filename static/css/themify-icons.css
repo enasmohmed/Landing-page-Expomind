@@ -1,16 +1,21 @@
 @font-face {
-	font-family: 'themify';
-	src:url('../fonts/themify.eot?-fvbane');
-	src:url('../fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'),
-		url('../fonts/themify.woff?-fvbane') format('woff'),
-		url('../fonts/themify.ttf?-fvbane') format('truetype'),
-		url('../fonts/themify.svg?-fvbane#themify') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "ShubbakW05";
+  src: url("../fonts/ShubbakW05-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ShubbakW05";
+  src: url("../fonts/ShubbakW05-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 [class^="ti-"], [class*=" ti-"] {
-	font-family: 'themify';
+	font-family: "ShubbakW05";
 	speak: none;
 	font-style: normal;
 	font-weight: normal;

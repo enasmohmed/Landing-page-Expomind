@@ -8,7 +8,7 @@ class PageTranslationOptions(TranslationOptions):
 
 
 class HeroSectionTranslationOptions(TranslationOptions):
-    fields = ('title', 'subtitle', 'button_text')
+    fields = ('title', 'subtitle', 'button_text', 'button_text_contact')
 
 
 class AboutSectionTranslationOptions(TranslationOptions):

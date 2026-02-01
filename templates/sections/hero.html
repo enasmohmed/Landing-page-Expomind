@@ -18,19 +18,45 @@
   <div class="align-center">
     <div class="container">
       <div class="row justify-content-center">
+<!--        <div class="col-lg-10 col-md-12 d-md-flex align-items-start">-->
+<!--          <img id="bnr-logo" class="img-fluid" src="{{ hero.logo_m_image.url }}" alt="">-->
+<!--          {% if hero %}-->
+<!--          <div class="ms-md-8 mt-5 mt-md-0">-->
+<!--            <h1 class="text-white mb-4">{{ hero.title|safe }}</h1>-->
+<!--            <p class="lead text-white">{{ hero.subtitle|safe }}</p>-->
+
+<!--          <a class="btn btn-theme btn-radius " href="#{{ hero.button_link }}">{{ hero.button_text }}</a>-->
+<!--          <a class="btn btn-border btn-radius " href="#{{ hero.button_link_contact }}">{{ hero.button_text_contact }}</a>-->
+
+<!--          </div>-->
+<!--          {% endif %}-->
+<!--        </div>-->
+
+
         <div class="col-lg-10 col-md-12 d-md-flex align-items-start">
-          <img id="bnr-logo" class="img-fluid" src="{{ hero.logo_m_image.url }}" alt="">
+
+          <!-- logo wrapper -->
+          <div class="logo-wrapper me-2">
+            <img id="bnr-logo" src="{{ hero.logo_m_image.url }}" alt="">
+          </div>
+
           {% if hero %}
-          <div class="ms-md-8 mt-5 mt-md-0">
-            <h1 class="text-white mb-4">{{ hero.title|safe }}</h1>
+          <!-- text wrapper -->
+          <div class="hero-content">
+            <h1 class="text-white">{{ hero.title|safe }}</h1>
             <p class="lead text-white">{{ hero.subtitle|safe }}</p>
-            {% if hero.button_text %}
-          <a class="btn btn-theme btn-radius " href="{{ hero.button_link }}">{{ hero.button_text }}</a>
-          <a class="btn btn-border btn-radius " href="{{ hero.button_link }}">{{ hero.button_text }}</a>
-            {% endif %}
+
+            <a class="btn btn-theme btn-radius" href="#{{ hero.button_link }}">
+              {{ hero.button_text }}
+            </a>
+            <a class="btn btn-border btn-radius" href="#{{ hero.button_link_contact }}">
+              {{ hero.button_text_contact }}
+            </a>
           </div>
           {% endif %}
+
         </div>
+
       </div>
     </div>
   </div>

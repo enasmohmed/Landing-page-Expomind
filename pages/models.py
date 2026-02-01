@@ -28,7 +28,11 @@ class HeroSection(models.Model):
     subtitle = RichTextField(blank=True, null=True)
     background_image = models.ImageField(upload_to='hero/', blank=True, null=True)
     button_text = models.CharField(max_length=50, blank=True, null=True)
-    button_link = models.URLField(blank=True, null=True)
+    button_link = models.CharField(max_length=50,blank=True, null=True)
+
+    button_text_contact = models.CharField(max_length=50, blank=True, null=True)
+    button_link_contact = models.CharField(max_length=50,blank=True, null=True)
+
     logo_m_image = models.ImageField(upload_to='hero/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
     language = models.CharField(max_length=5, choices=[('en', 'English'), ('ar', 'Arabic')], default='en')

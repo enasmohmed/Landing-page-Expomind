@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-31 23:12+0200\n"
+"POT-Creation-Date: 2026-02-01 12:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "Site Settings"
 msgstr ""
 
-#: core/models.py:97
+#: core/models.py:98
 msgid "Core Value"
 msgstr ""
 
@@ -1402,41 +1402,45 @@ msgid ""
 "settings.SASS_PRECISION."
 msgstr ""
 
-#: templates/layout/footer.html:31
+#: templates/layout/footer.html:28
 msgid "Quick"
-msgstr "سريعة"
-
-#: templates/layout/footer.html:31
-msgid "Link"
 msgstr "روابط"
 
-#: templates/layout/footer.html:40 templates/sections/services.html:13
+#: templates/layout/footer.html:28
+msgid "Link"
+msgstr "سريعة"
+
+#: templates/layout/footer.html:37 templates/sections/services.html:13
 msgid "Our"
 msgstr "خد"
 
-#: templates/layout/footer.html:40 templates/sections/services.html:13
+#: templates/layout/footer.html:37 templates/sections/services.html:13
 msgid "Services"
 msgstr "ماتنا"
 
-#: templates/layout/footer.html:49
-msgid "Recent"
-msgstr "اخر"
+#: templates/layout/footer.html:45
+msgid "Working"
+msgstr "ساعات"
 
-#: templates/layout/footer.html:49
-msgid "Post"
-msgstr "المشاركات"
+#: templates/layout/footer.html:45
+msgid "hours"
+msgstr "العمل"
 
-#: templates/layout/footer.html:69
+#: templates/layout/footer.html:88
 msgid "Address:"
 msgstr "العنوان"
 
-#: templates/layout/footer.html:74
+#: templates/layout/footer.html:93
 msgid "Phone:"
 msgstr "التلفون"
 
-#: templates/layout/footer.html:79
+#: templates/layout/footer.html:98
 msgid "Email:"
 msgstr "الايميل"
+
+#: templates/layout/footer.html:104
+msgid "Website:"
+msgstr "الموقع"
 
 #: templates/sections/about.html:12
 msgid "about Our"
@@ -1445,3 +1449,9 @@ msgstr "من نحن"
 #: templates/sections/about.html:51
 msgid "What We Do"
 msgstr "ما نقدمه"
+
+#~ msgid "Recent"
+#~ msgstr "اخر"
+
+#~ msgid "Post"
+#~ msgstr "المشاركات"

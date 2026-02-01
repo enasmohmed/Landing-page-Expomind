@@ -34,8 +34,10 @@ class FooterSection(models.Model):
 
     # ساعات العمل
     working_days = models.CharField(max_length=200, blank=True, null=True)
+    working_dec = models.CharField(max_length=200, blank=True, null=True)
     working_hours = models.CharField(max_length=100, blank=True, null=True)
-    sunday_hours = models.CharField(max_length=100, blank=True, null=True)
+    working_off = models.CharField(max_length=100, blank=True, null=True)
+    status = models.CharField(max_length=100, blank=True, null=True)
 
     # روابط سريعة
     quick_links = models.JSONField(blank=True, null=True)
@@ -43,8 +45,7 @@ class FooterSection(models.Model):
     # حلول أو خدمات
     solutions = models.JSONField(blank=True, null=True)
 
-    # Recent Posts
-    recent_posts = models.JSONField(blank=True, null=True)
+
 
     # بيانات التواصل
     address = models.CharField(max_length=200, blank=True, null=True)
@@ -138,3 +139,40 @@ class Sections(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+class SocialMedia(models.Model):
+    ICON_CHOICES = [
+        ('fab fa-facebook-f', 'Facebook'),
+        ('fab fa-twitter', 'Twitter'),
+        ('fab fa-instagram', 'Instagram'),
+        ('fab fa-linkedin-in', 'LinkedIn'),
+        ('fab fa-youtube', 'YouTube'),
+        ('fab fa-snapchat-ghost', 'Snapchat'),
+        ('fab fa-tiktok', 'TikTok'),
+        ('fab fa-whatsapp', 'WhatsApp'),  # ✅ أضفنا واتس اب
+        ('fas fa-mobile-alt', 'Application'),  # أيقونة لتطبيق generic
+    ]
+
+    name = models.CharField(max_length=50)  # الاسم الظاهر في admin
+    url = models.URLField()
+    icon_class = models.CharField(max_length=50, choices=ICON_CHOICES)
+    background_color = models.CharField(
+        max_length=7,
+        blank=True,
+        null=True,
+        help_text="Enter HEX color for background (e.g., #25D366 for WhatsApp)"
+    )
+    color = models.CharField(
+        max_length=7,
+        blank=True,
+        null=True,
+        default="#ffffff",
+        help_text="Enter HEX color for the icon itself (e.g., #ffffff for white)"
+    )
+
+    is_active = models.BooleanField(default=True)  # لتفعيل/إخفاء أي حساب
+
+    def __str__(self):
+        return self.name

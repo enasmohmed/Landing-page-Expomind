@@ -6,8 +6,8 @@
 
 
 
+<footer class="footer dark-bg position-relative" id="contact" data-bg-img="{% static 'images/bg/09.png' %}" style="background-size: contain; background-repeat: no-repeat;">
 
-<footer class="footer footer-2 pt-5 mt-0 dark-bg position-relative" id="contact">
   <div class="primary-footer">
     <div class="container">
       <div class="row">
@@ -21,17 +21,14 @@
             </a>
           </div>
           <p class="mb-3">{{ footer.description }}</p>
-<!--          <ul class="list-unstyled working-hours clearfix">-->
-<!--            <li><span>{{ footer.working_days }}</span> {{ footer.working_hours }}</li>-->
-<!--            <li><span>Sunday</span> {{ footer.sunday_hours }}</li>-->
-<!--          </ul>-->
+
         </div>
 
         <div class="col-lg-3 col-md-6 mt-5 mt-md-0 footer-list ps-md-5">
           <h5>{% trans "Quick" %} <span class="text-theme"> {% trans "Link" %}</span></h5>
           <ul class="list-unstyled">
             {% for link in footer.quick_links %}
-            <li><a href="{{ link.url }}"><i class="fas fa-angle-right"></i> {{ link.title }}</a></li>
+            <li><a href="#{{ link.url }}"><i class="fas fa-angle-right"></i> {{ link.title }}</a></li>
             {% endfor %}
           </ul>
         </div>
@@ -40,44 +37,58 @@
           <h5>{% trans "Our" %} <span class="text-theme"> {% trans "Services" %}</span></h5>
           <ul class="list-unstyled">
             {% for sol in footer.solutions %}
-            <li><a href="{{ sol.url }}"><i class="fas fa-angle-right"></i> {{ sol.title }}</a></li>
+            <li><a href="#{{ sol.url }}"><i class="fas fa-angle-right"></i> {{ sol.title }}</a></li>
             {% endfor %}
           </ul>
         </div>
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <h5>{% trans "Working" %} <span class="text-theme"> {% trans "hours" %}</span></h5>
+          <p>{{ footer.site_name }} {{ footer.working_dec }}</p>
+          <ul class="list-unstyled working-hours clearfix">
+            <li dir="ltr"><span>{{ footer.working_days }}</span> {{ footer.working_hours }}</li>
+            <li><span>{{ footer.working_off }}</span> {{ footer.status }}</li>
+          </ul>
+          <div class="social-icons social-colored mt-3">
 
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 widget">
-          <h5>{% trans "Recent" %} <span class="text-theme"> {% trans "Post" %}</span></h5>
-          <div class="recent-post mb-0">
-            <ul class="list-unstyled">
-              {% for post in footer.recent_posts %}
-              <li class="mb-3">
-                <div class="recent-post-thumb">
-                  <img class="img-fluid" src="{{ post.image }}" alt="">
-                </div>
-                <div class="recent-post-desc"> <a href="{{ post.url }}">{{ post.title }}</a>
-                  <span>{{ post.date }}</span>
-                </div>
+            <ul class="social-links list-inline mb-0">
+              {% for social in social_links %}
+              <li class="social-item">
+                <a href="{{ social.url }}" target="_blank"
+                 style="background-color: {{ social.background_color|default:'#000000' }};
+                  color: {{ social.color|default:'#ffffff' }}; font-size: 22px;">
+                  <i class="{{ social.icon_class }}" aria-hidden="true"></i>
+                </a>
               </li>
+
               {% endfor %}
             </ul>
+
+
           </div>
         </div>
+
       </div>
 
       <div class="row g-0 mt-5 box-shadow">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="p-5 text-center footer-media theme-bg border-0"> <span>{% trans "Address:" %}</span>
             <p class="mb-0">{{ footer.address }}</p>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="p-5 text-center footer-media dark-bg border border-dark"> <span>{% trans "Phone:" %}</span>
             <a href="tel:{{ footer.phone }}" dir="ltr">{{ footer.phone }}</a>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="p-5 text-center footer-media theme-bg border-0"> <span>{% trans "Email:" %}</span>
             <a href="mailto:{{ footer.email }}">{{ footer.email }}</a>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="p-5 text-center footer-media dark-bg border border-dark"> <span>{% trans "Website:" %}</span>
+            <a href="{{ site_settings.website }}" target="_blank">{{ site_settings.website }}</a>
           </div>
         </div>
       </div>

@@ -11,15 +11,18 @@
 
       <!-- LEFT : TABS -->
       <div class="col-lg-6 col-md-12">
-
         <ul class="nav nav-tabs mb-4" role="tablist">
 
           {% if mission %}
           <li class="nav-item">
             <button class="nav-link active"
+                    id="mission-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#mission"
-                    type="button">
+                    type="button"
+                    role="tab"
+                    aria-controls="mission"
+                    aria-selected="true">
               {{ mission.title }}
             </button>
           </li>
@@ -28,9 +31,13 @@
           {% if vision %}
           <li class="nav-item">
             <button class="nav-link {% if not mission %}active{% endif %}"
+                    id="vision-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#vision"
-                    type="button">
+                    type="button"
+                    role="tab"
+                    aria-controls="vision"
+                    aria-selected="false">
               {{ vision.title }}
             </button>
           </li>
@@ -41,20 +48,27 @@
         <div class="tab-content">
 
           {% if mission %}
-          <div class="tab-pane fade show active" id="mission">
+          <div class="tab-pane fade show active"
+               id="mission"
+               role="tabpanel"
+               aria-labelledby="mission-tab">
             <p class="lead">{{ mission.description }}</p>
           </div>
           {% endif %}
 
           {% if vision %}
-          <div class="tab-pane fade {% if not mission %}show active{% endif %}" id="vision">
+          <div class="tab-pane fade"
+               id="vision"
+               role="tabpanel"
+               aria-labelledby="vision-tab">
             <p class="lead">{{ vision.description }}</p>
           </div>
           {% endif %}
 
         </div>
-
       </div>
+
+
 
       <!-- RIGHT : ACCORDION (ثابت مؤقتًا) -->
       <div class="col-lg-6 col-md-12 mt-5 mt-lg-0">

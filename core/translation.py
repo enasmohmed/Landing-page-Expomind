@@ -7,7 +7,7 @@ class SiteSettingsTranslationOptions(TranslationOptions):
 
 
 class FooterSectionTranslationOptions(TranslationOptions):
-    fields = ('site_name', 'description' ,'address', 'copyright_text', 'working_days', 'working_hours', 'sunday_hours')
+    fields = ('site_name', 'description' ,'address', 'copyright_text', 'working_days','working_dec', 'working_hours', 'working_off', 'status', 'quick_links', 'solutions')
 
 class VisionSectionTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
@@ -21,6 +21,11 @@ class SectionsTranslationOptions(TranslationOptions):
 
 class CTASectionTranslationOptions(TranslationOptions):
     fields = ('title', 'button_text')
+
+
+
+class SocialMediaTranslationOptions(TranslationOptions):
+    fields = ('name',)
 
 
 translator.register(SiteSettings, SiteSettingsTranslationOptions)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SiteSettings, VisionSection, CoreValue, CTASection, FooterSection, Sections
+from .models import SiteSettings, VisionSection, CoreValue, CTASection, FooterSection, Sections, SocialMedia
 
 
 # Register your models here.
@@ -36,3 +36,8 @@ class CTASectionAdmin(admin.ModelAdmin):
 @admin.register(Sections)
 class SectionsAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'is_visible')
+
+
+@admin.register(SocialMedia)
+class SocialMediaAdmin(admin.ModelAdmin):
+    list_display = ('name',  )
