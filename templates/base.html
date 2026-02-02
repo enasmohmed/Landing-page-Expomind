@@ -1,71 +1,125 @@
-{% load static %}
-{% load i18n %}
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+{% load static %} {% load i18n %}
+<!doctype html>
+<html
+  lang="{{ LANGUAGE_CODE }}"
+  dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}"
+>
+  <head>
+    <!-- meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="keywords"
+      content="Bootstrap 5, Factory, Industrial, building, business, chemicals, multipurpose, RTL"
+    />
+    <meta name="description" content="Bootstrap 5 HTML5 Template" />
+    <meta name="author" content="www.themeht.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
+    <!-- Title -->
+    <title>{{ site_settings.site_name }}</title>
 
-<!-- meta tags -->
-<meta charset="utf-8">
-<meta name="keywords" content="Bootstrap 5, Factory, Industrial, building, business, chemicals, multipurpose, RTL" />
-<meta name="description" content="Bootstrap 5 HTML5 Template" />
-<meta name="author" content="www.themeht.com" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Title -->
-<title>{{ site_settings.site_name }}</title>
-
-<!-- favicon icon -->
-    <link rel="icon" sizes="48x48" type="image/png" href="{{ site_settings.favicon_url }}">
-
+    <!-- favicon icon -->
+    <link
+      rel="icon"
+      sizes="48x48"
+      type="image/png"
+      href="{{ site_settings.favicon_url }}"
+    />
 
     <!-- inject css start -->
-  <!--== bootstrap -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <!--== bootstrap -->
+    <link
+      href="{% static 'css/bootstrap.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== animate -->
-    <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/animate.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== fontawesome -->
-    <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/fontawesome-all.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== themify-icons -->
-    <link href="{% static 'css/themify-icons.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/themify-icons.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== magnific-popup -->
-    <link href="{% static 'css/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/magnific-popup/magnific-popup.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== owl-carousel -->
-    <link href="{% static 'css/owl-carousel/owl.carousel.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/owl-carousel/owl.carousel.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== spacing -->
-    <link href="{% static 'css/spacing.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/spacing.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== base -->
     <link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css" />
 
     <!--== shortcodes -->
-    <link href="{% static 'css/shortcodes.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/shortcodes.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== default-theme -->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-
+    <link
+      href="{% static 'css/style.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!--== responsive -->
-    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" type="text/css" />
-
+    <link
+      href="{% static 'css/responsive.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- RTL overrides -->
     {% if LANGUAGE_CODE == 'ar' %}
-    <link href="{% static 'css/bootstrap.min-rtl.css' %}" rel="stylesheet" type="text/css" />
-    <link href="{% static 'css/base-rtl.css' %}" rel="stylesheet">
-    <link href="{% static 'css/shortcodes-rtl.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style-rtl.css' %}" rel="stylesheet">
-    <link href="{% static 'css/owl-carousel/owl.carousel-rtl.css' %}" rel="stylesheet">
-     <link href="{% static 'css/responsive-rtl.css' %}" rel="stylesheet" type="text/css" />
+    <link
+      href="{% static 'css/bootstrap.min-rtl.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/base-rtl.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/shortcodes-rtl.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style-rtl.css' %}" rel="stylesheet" />
+
+    <link
+      href="{% static 'css/owl-carousel/owl.carousel-rtl.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'css/responsive-rtl.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
     {% endif %}
 
-<!-- inject css end -->
+    <!-- inject css end -->
 
     <style>
       :root {
@@ -78,71 +132,56 @@
               font-weight: bold;
               border-bottom: 2px solid #ff6600;
         }
-
     </style>
+  </head>
 
+  <body>
+    <!-- page wrapper start -->
 
+    <div class="page-wrapper">
+      <!-- preloader start -->
 
-</head>
+      {% include 'layout/loader.html' %}
 
-<body>
+      <!-- preloader end -->
 
-<!-- page wrapper start -->
+      <!--header start-->
+      {% include 'layout/navbar.html' %}
 
-<div class="page-wrapper">
+      <!--header end-->
 
-<!-- preloader start -->
+      <!--body content start-->
 
-    {% include 'layout/loader.html' %}
+      <div class="page-content">
+        {% block content %}
+        <!-- page content here -->
+        {% endblock content %}
+      </div>
 
-<!-- preloader end -->
+      <!--body content end-->
 
+      <!--footer start-->
 
- <!--header start-->
-    {% include 'layout/navbar.html' %}
+      {% include 'layout/footer.html' %}
+      <!--footer end-->
+    </div>
 
- <!--header end-->
+    <!-- page wrapper end -->
 
+    <!--back-to-top start-->
 
+    <div class="scroll-top">
+      <a class="smoothscroll" href="#top"><i class="fas fa-chevron-up"></i></a>
+    </div>
 
+    <!--back-to-top end-->
 
+    <!-- inject js start -->
+    <!-- jQuery لو محتاجه Plugins -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!--body content start-->
+    <!-- Bootstrap يأتي مدمجاً داخل theme.js - تحميله مرتين يسبب عدم عمل زر القائمة (toggle) -->
 
-<div class="page-content">
-
-{% block content %}
-    <!-- page content here -->
-    {% endblock content %}
-
-
-</div>
-
-<!--body content end--> 
-
-
-<!--footer start-->
-
- {% include 'layout/footer.html' %}
-<!--footer end-->
-
-
-</div>
-
-<!-- page wrapper end -->
-
-
-
-
-
-<!--back-to-top start-->
-
-<div class="scroll-top"><a class="smoothscroll" href="#top"><i class="fas fa-chevron-up"></i></a></div>
-
-<!--back-to-top end-->
-
- 
-<!-- inject js start -->
     <!--== theme -->
     <script src="{% static 'js/theme.js' %}"></script>
 
@@ -180,35 +219,33 @@
     <script src="{% static 'js/theme-script-rtl.js' %}"></script>
     {% endif %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- inject js end -->
-    <script>
-        document.addEventListener("scroll", () => {
-          const sections = document.querySelectorAll("section[id]");
-          const navLinks = document.querySelectorAll(".nav-link");
+    {% comment %} <script>
+      document.addEventListener("scroll", () => {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
 
-          let currentSection = "";
+        let currentSection = "";
 
-          sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
 
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-              currentSection = section.getAttribute("id");
-            }
-          });
-
-          navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.dataset.section === currentSection) {
-              link.classList.add("active");
-            }
-          });
+          if (
+            pageYOffset >= sectionTop &&
+            pageYOffset < sectionTop + sectionHeight
+          ) {
+            currentSection = section.getAttribute("id");
+          }
         });
-    </script>
 
-
-</body>
-
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.dataset.section === currentSection) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script> {% endcomment %}
+  </body>
 </html>

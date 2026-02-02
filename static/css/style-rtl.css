@@ -365,14 +365,18 @@ transform: translateY(-50%) rotate(90deg); -webkit-transform: translateY(-50%) r
 
 
 
-
 @media (max-width: 768px) {
+    #bnr-logo {
+      width: 80%;
+      height: auto;
+    },
   .logo-wrapper {
     flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
+    max-width: 80%;
+    margin-bottom: -32px;
   }
 }
+
 
 /*
 .accordion-button::after{
