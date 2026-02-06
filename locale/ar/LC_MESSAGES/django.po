@@ -1444,7 +1444,7 @@ msgstr "الموقع"
 
 #: templates/sections/about.html:12
 msgid "about Our"
-msgstr "من نحن"
+msgstr "من "
 
 #: templates/sections/about.html:51
 msgid "What We Do"

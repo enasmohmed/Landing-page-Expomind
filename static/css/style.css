@@ -296,7 +296,8 @@ transform: translateY(-50%) rotate(90deg); -webkit-transform: translateY(-50%) r
 
     font-size: 37px;
     font-weight: bolder;
-    background: linear-gradient(356deg, #fef1d6, #679cbd, #fef1d6);
+    /* background: linear-gradient(356deg, #fef1d6, #679cbd, #fef1d6); */
+    background-color: #fc0800;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -16,7 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Title -->
-    <title>{{ site_settings.site_name }}</title>
+    <title style="font-family: &quot;ShubbakW05&quot;, sans-serif !important">
+      {{ site_settings.site_name }}
+    </title>
 
     <!-- favicon icon -->
     <link
@@ -103,7 +105,10 @@
     <!-- RTL overrides -->
     {% if LANGUAGE_CODE == 'ar' %}
     <link
-      href="{% static 'css/bootstrap.min-rtl.css' %}" rel="stylesheet" type="text/css" />
+      href="{% static 'css/bootstrap.min-rtl.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link href="{% static 'css/base-rtl.css' %}" rel="stylesheet" />
     <link href="{% static 'css/shortcodes-rtl.css' %}" rel="stylesheet" />
     <link href="{% static 'css/style-rtl.css' %}" rel="stylesheet" />
@@ -220,7 +225,8 @@
     {% endif %}
 
     <!-- inject js end -->
-    {% comment %} <script>
+    {% comment %}
+    <script>
       document.addEventListener("scroll", () => {
         const sections = document.querySelectorAll("section[id]");
         const navLinks = document.querySelectorAll(".nav-link");
@@ -246,6 +252,7 @@
           }
         });
       });
-    </script> {% endcomment %}
+    </script>
+    {% endcomment %}
   </body>
 </html>

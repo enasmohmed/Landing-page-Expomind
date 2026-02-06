@@ -1,5 +1,4 @@
-{% load static %}
-{% load i18n %}
+{% load static %} {% load i18n %}
 
 <!--header start-->
 
@@ -17,9 +16,18 @@
                 alt="Logo"
               />
               <span class="site-name">{{ site_settings.site_name }}</span>
+              
             </a>
 
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -46,7 +54,7 @@
                       value="{{ request.path }}"
                     />
 
-                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_current_language as LANGUAGE_CODE %} 
                     {% if LANGUAGE_CODE == 'ar' %}
                     <button
                       type="submit"

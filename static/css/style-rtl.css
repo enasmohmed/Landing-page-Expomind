@@ -45,7 +45,7 @@
 
 
 html,
-body {
+body  {
     font-family: "ShubbakW05", sans-serif !important;
 
     font-weight: normal;
@@ -64,7 +64,13 @@ html[lang^="ar"] h1,
 html[lang^="ar"] h2,
 html[lang^="ar"] h3,
 html[lang^="ar"] p,
-html[lang^="ar"] span {
+html[lang^="ar"] span,
+html[lang^="ar"] ,
+ a,
+button,
+input,
+textarea,
+select{
   font-family: "ShubbakW05", sans-serif !important;
 }
 
@@ -76,15 +82,21 @@ html[lang^="ar"] h4,
 html[lang^="ar"] h5,
 html[lang^="ar"] h6 {
   font-weight: 700;
+  font-family: "ShubbakW05", sans-serif !important;
 }
 
-a,
+.navbar a.navbar-brand span.site-name {
+  font-family: "ShubbakW05", "Arial", sans-serif !important;
+}
+
+
+/* a,
 button,
 input,
 textarea,
 select {
-  font-family: "ShubbakW05", sans-serif;
-}
+  font-family: "ShubbakW05", sans-serifm !important;
+} */
 
 
 /* ------------------------
@@ -313,10 +325,10 @@ transform: translateY(-50%) rotate(90deg); -webkit-transform: translateY(-50%) r
 
     margin-left: 5px !important;
 
-
     font-size: 37px;
     font-weight: bolder;
-    background: linear-gradient(183deg, #679cbd, #679cbd, #fef1d6);
+    /* background: linear-gradient(183deg, #679cbd, #679cbd, #fef1d6); */
+    background-color: #fc0800;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -369,12 +381,12 @@ transform: translateY(-50%) rotate(90deg); -webkit-transform: translateY(-50%) r
     #bnr-logo {
       width: 80%;
       height: auto;
-    },
-  .logo-wrapper {
-    flex: 0 0 100%;
-    max-width: 80%;
-    margin-bottom: -32px;
-  }
+    }
+    .logo-wrapper {
+      flex: 0 0 100%;
+      max-width: 80%;
+      margin-bottom: -32px;
+    }
 }
 
 
