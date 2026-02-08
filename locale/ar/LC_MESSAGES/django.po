@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-01 12:46+0200\n"
+"POT-Creation-Date: 2026-02-08 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1426,24 +1426,24 @@ msgstr "ساعات"
 msgid "hours"
 msgstr "العمل"
 
-#: templates/layout/footer.html:88
+#: templates/layout/footer.html:74
 msgid "Address:"
 msgstr "العنوان"
 
-#: templates/layout/footer.html:93
+#: templates/layout/footer.html:79
 msgid "Phone:"
 msgstr "التلفون"
 
-#: templates/layout/footer.html:98
+#: templates/layout/footer.html:84
 msgid "Email:"
 msgstr "الايميل"
 
-#: templates/layout/footer.html:104
+#: templates/layout/footer.html:90
 msgid "Website:"
 msgstr "الموقع"
 
 #: templates/sections/about.html:12
-msgid "about Our"
+msgid "about"
 msgstr "من "
 
 #: templates/sections/about.html:51
